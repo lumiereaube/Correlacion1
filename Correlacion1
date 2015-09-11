@@ -1,0 +1,39 @@
+String mes []= {"enero", "febrero", "marzo", "abril","mayo","junio", "julio", "agosto", "septiembre"};
+String horas []= {"(h)", "(h)", "(h)", "(h)", "(h)", "(h)", "(h)", "(h)", "(h)"};
+int num []= {10, 1, 0, 5, 30, 2, 0, 98, 130, 50, 20, 100};
+int obvio[]= {20, 30, 50, 26, 60, 94, 10, 100, 200,};
+
+PFont luzi;
+int oz= 220;
+void setup () {
+  size (700,500);
+  luzi= loadFont("Avenir-Black-48.vlw");
+  textFont(luzi, 18
+ );
+ noSmooth ();
+}
+
+void draw () {
+  background (0);
+  fill (255, 255,255);
+ for (int a= 0; a<9; a=a+1) {
+     
+   text ("Consumo de Chocolate en lo que va del año (en barras) vs. horas trabajadas", 0, 100);
+   text (mes[a], 100,150 +(a*40));
+   /*fill (230, oz+ 230,0);*/
+   rect (oz,135+(a*40), num [a], 15);
+   text ( num [a], 230+ num [a], 150+(a*40));
+      /*text ("Continuará..... ", 200, 400);*/
+
+}
+ for (int a= 0; a<9; a=a+1) {
+        text (horas[a], 100,167 +(a*40));
+
+   fill (230, oz+ 230,0);
+   rect (oz,150+(a*40), obvio [a], 15);
+   text ( obvio [a], 225+ obvio [a], 165+(a*40));
+      /*text ("Continuará..... ", 200, 400);*/
+
+
+}
+}
