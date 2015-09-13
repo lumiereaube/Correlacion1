@@ -1,0 +1,54 @@
+String year [] = {"2000","2001","2002","2003","2004","2005","2006","2007","2008","2009"};
+int divorce[]= {500,470,460,440,430,410,420,420,420,410};
+int marga[]= {82,70,65,53,52,40,46,45,42,37};
+String metdiv [] = {"5","4.8","4.6","4.4","4.2","4.0"};
+String metmarga [] = {"8","7","6","5","4","3"};
+PFont luzi;
+
+void setup () {
+  size (800,350);
+  
+  luzi= loadFont("CenturyGothic-Bold-48.vlw");
+  textFont(luzi, 15);
+ noSmooth ();
+}
+
+void draw () {
+  background (255);
+  stroke (0,0,0);
+       fill (0);
+             text ("CORRELATION BETWEEN DIVORCE RATE AND MAGARINE CONSUMPTION",150,20); 
+
+      fill (#FF9933);
+      text ("Divorce rate",50,260); 
+      text ("(per 1000 people)",50,280);
+                  
+                  fill (#FFCC33);
+            text ("Consumption",660,260);
+              text ("margarine",660,280);
+              text ("(per capita)",660,300);
+   stroke(200);  
+line (120,230,710,230);
+ for (int a= 0; a<10; a=a+1) {
+   fill(#666666);  
+   text (year[a], 150 +(a*50),70);
+      
+     noStroke ();
+                  fill (#FFCC33,200);
+
+      ellipse (620-(a*50),100+(marga [a]),25, 25);      
+            fill (#FF9933, 200);
+
+      ellipse (620-(a*50),-300+(divorce[a]),25, 25);
+
+ }
+ for (int b=0; b<6; b=b+1) {
+         fill (#FF9933);
+    
+   text (metdiv[b],100,120 +(b*17));
+                     fill (#FFCC33);
+
+        text (metmarga[b],700,120 +(b*17));
+
+ }
+}
